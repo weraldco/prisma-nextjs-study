@@ -1,7 +1,7 @@
 import prisma from '@/lib/db';
 import React from 'react';
 
-export default async function PostPage({ params }) {
+export default async function PostPage({ params }: { params: { id: string } }) {
 	const post = await prisma.post.findUnique({
 		where: {
 			id: params.id,
