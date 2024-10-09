@@ -3,9 +3,25 @@ const prisma = new PrismaClient();
 
 const initialPosts: Prisma.PostCreateInput[] = [
 	{
-		title: 'Fist post',
-		slug: 'first-post',
-		content: 'This is the sample content',
+		title: 'Second Post',
+		slug: 'second-post',
+		content: 'This is the second time sample of seeding',
+		author: {
+			connectOrCreate: {
+				where: {
+					email: 'werald@gmail.com',
+				},
+				create: {
+					email: 'werald@gmail.com',
+					hashedPassword: 'aosdaodiaodiaosd',
+				},
+			},
+		},
+	},
+	{
+		title: 'Third Post',
+		slug: 'third-post',
+		content: 'This is the third time sample of seeding',
 		author: {
 			connectOrCreate: {
 				where: {

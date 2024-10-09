@@ -26,7 +26,7 @@ export default async function PostsPage() {
 			email: 'werald@gmail.com',
 		},
 		include: {
-			postt: true,
+			posts: true,
 		},
 	});
 	const postCount = await prisma.post.count();
@@ -37,7 +37,7 @@ export default async function PostsPage() {
 					All Posts({postCount}) <Link href="/posts/add">(add)</Link>
 				</h1>
 				<ul className="grid gap-2 ">
-					{user?.postt.map((post) => (
+					{user?.posts.map((post) => (
 						<li key={post.id} className="grid">
 							<Link
 								className="bg-blue-100 py-2 px-4"
