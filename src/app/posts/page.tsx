@@ -34,7 +34,7 @@ export default async function PostsPage() {
 		<div className="flex flex-col p-20">
 			<main className="grid items-center justify-center gap-4 ">
 				<h1 className="text-3xl font-bold">
-					All Posts({postCount}) <Link href="/posts/add">(add)</Link>
+					All Posts({postCount}){/* <Link href="/posts/add">(add)</Link> */}
 				</h1>
 				<ul className="grid gap-2 ">
 					{user?.posts.map((post) => (
