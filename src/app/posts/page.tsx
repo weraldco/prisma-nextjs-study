@@ -4,23 +4,6 @@ import Link from 'next/link';
 import React from 'react';
 
 export default async function PostsPage() {
-	// const posts = await prisma.post.findMany({
-	// 	where: {
-	// 		// title: {
-	// 		// 	endsWith: 'Post',
-	// 		// },
-	// 	},
-	// 	// orderBy: {
-	// 	// 	createdAt: 'asc',
-	// 	// },
-	// 	select: {
-	// 		id: true,
-	// 		title: true,
-	// 		slug: true,
-	// 	},
-	// 	// take: 2,
-	// 	// skip: 1,
-	// });
 	const user = await prisma.user.findUnique({
 		where: {
 			email: 'werald@gmail.com',
@@ -33,9 +16,7 @@ export default async function PostsPage() {
 	return (
 		<div className="flex flex-col p-20">
 			<main className="grid items-center justify-center gap-4 ">
-				<h1 className="text-3xl font-bold">
-					All Posts({postCount}){/* <Link href="/posts/add">(add)</Link> */}
-				</h1>
+				<h1 className="text-3xl font-bold">All Posts({postCount})</h1>
 				<ul className="grid gap-2 ">
 					{user?.posts.map((post) => (
 						<li key={post.id} className="grid">
