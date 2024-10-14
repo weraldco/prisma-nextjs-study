@@ -1,11 +1,18 @@
-import { updatePost } from '@/actions/action';
 import React from 'react';
 
-const EditForm = ({ post }) => {
-	// const updatePostById = updatePost.bind(FormData, post.id);
+type PostT = {
+	id: string;
+	title: string;
+	slug: string;
+	content: string;
+};
+
+type EditFormProps = { post: PostT };
+
+const EditForm = ({ post }: EditFormProps) => {
 	return (
 		<div>
-			<form className="grid gap-4 w-[300px]" action={updatePost}>
+			<form className="grid gap-4 w-[300px]" action="">
 				<input
 					type="text"
 					name="title"
